@@ -1,0 +1,36 @@
+{
+    "name": "zverik/mapbbcode",
+    "type": "phpbb-extension",
+    "description": "Adds maps to forum posts and messages. That's done via a [map] bbcode.",
+    "homepage": "https://github.com/mapbbcode/mapbb-phpbb31",
+    "version": "3.1.0",
+    "time": "2016-04-17",
+    "keywords": [
+        "phpbb",
+        "extension",
+        "bbcodes",
+        "maps"
+    ],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Ilya Zverev",
+            "homepage": "http://ilya.zverev.info",
+            "email": "ilya@zverev.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "phpbb/phpbb": ">=3.1.3"
+    },
+    "require-dev": {
+        "phpbb/epv": "dev-master"
+    },
+    "extra": {
+        "display-name": "MapBBCode",
+        "soft-require": {
+            "phpbb/phpbb": ">=3.1.3"
+        }
+    }
+}

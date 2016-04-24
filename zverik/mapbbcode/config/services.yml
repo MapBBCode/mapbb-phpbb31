@@ -1,0 +1,8 @@
+services:
+    zverik.mapbbcode.listener:
+        class: zverik\mapbbcode\event\listener
+        arguments:
+          - '@template'
+          - '@user'
+        tags:
+          - { name: event.listener }
