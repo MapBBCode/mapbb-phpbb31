@@ -14,35 +14,40 @@
 <script type="text/javascript">
 <!--
 var deferredCodes = [];
-function showMapBBCode(code) { deferredCodes.push(code); }
+function showMapBBCode(code, extid) {
+  deferredCodes.push([code, extid]);
+}
 
 var mapBBcode;
 function mapbbcode_init() {
-mapBBcode = new MapBBCode({
-  windowPath: 'ext/zverik/mapbbcode/styles/all/theme/mapbbcode/',
-	layers: '{LAYERS}'.split(','),
-	defaultZoom: {DEFAULT_ZOOM}+0,
-	defaultPosition: [{DEFAULT_POS}],
-	viewWidth: {VIEW_WIDTH}+0,
-	viewHeight: {VIEW_HEIGHT}+0,
-	fullViewHeight: {FULL_HEIGHT}+0,
-	editorHeight: {EDITOR_HEIGHT}+0,
-  windowWidth: {WINDOW_WIDTH}+0,
-  windowHeight: {WINDOW_HEIGHT}+0,
-	fullFromStart: {ALWAYS_FULL},
-	preferStandardLayerSwitcher: {STANDARD_SWITCHER},
-	outerLinkTemplate: '{OUTER_LINK}',
-	uploadButton: {ENABLE_EXTERNAL},
-	externalEndpoint: '{SHARE_SERVER}',
-	hideInsideClasses: []
-});
+  mapBBcode = new MapBBCode({
+    windowPath: 'ext/zverik/mapbbcode/styles/all/theme/mapbbcode/',
+    layers: '{LAYERS}'.split(','),
+    defaultZoom: {DEFAULT_ZOOM}+0,
+    defaultPosition: [{DEFAULT_POS}],
+    viewWidth: {VIEW_WIDTH}+0,
+    viewHeight: {VIEW_HEIGHT}+0,
+    fullViewHeight: {FULL_HEIGHT}+0,
+    editorHeight: {EDITOR_HEIGHT}+0,
+    windowWidth: {WINDOW_WIDTH}+0,
+    windowHeight: {WINDOW_HEIGHT}+0,
+    fullFromStart: {ALWAYS_FULL},
+    preferStandardLayerSwitcher: {STANDARD_SWITCHER},
+    outerLinkTemplate: '{OUTER_LINK}',
+    uploadButton: {ENABLE_EXTERNAL},
+    externalEndpoint: '{SHARE_SERVER}',
+    hideInsideClasses: []
+  });
 <!-- IF not S_ENABLE_EXTERNAL -->
-mapBBcode.showExternal = function(div, id) {};
+  mapBBcode.showExternal = function(div, id) {};
 <!-- ENDIF -->
 
-for (var i = 0; i < deferredCodes.length; i++) {
-  mapBBcode.show(deferredCodes[i]);
-}
+  for (var i = 0; i < deferredCodes.length; i++) {
+    if (deferredCodes[i][1])
+      mapBBcode.showExternal(deferredCodes[i][0], deferredCodes[i][1]);
+    else
+      mapBBcode.show(deferredCodes[i][0]);
+  }
 }
 window.addEventListener('load', mapbbcode_init, false);
 //-->
