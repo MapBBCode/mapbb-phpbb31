@@ -38,7 +38,7 @@ class mapbbcode {
         'first_pass_match'		=> '!\[map(=[0-9,.]+)?\](.*?)\[/map\]!ies',
         'first_pass_replace'	=> '\'[map:$uid${1}]\'.str_replace(array("\\r\\n", \'\\"\', \'\\\'\', \'(\', \')\'), array("\n", \'"\', \'&#39;\', \'&#40;\', \'&#41;\'), trim(\'${2}\')).\'[/map:$uid]\'',
         'second_pass_match'		=> '!\[map:($uid)(=[0-9,.]+)?\](.*?)\[/map:$uid\]!se',
-        'second_pass_replace'	=> '\'<div id="map${1}\'.md5(\'${2}${3}\').\'">[map${2}]${3}[/map]</div><script language="javascript">showMapBBcode(\\\'map${1}\'.md5(\'${2}${3}\').\'\\\');</script>\'',
+        'second_pass_replace'	=> '\'<div id="map${1}\'.md5(\'${2}${3}\').\'">[map${2}]${3}[/map]</div><script language="javascript">showMapBBCode(\\\'map${1}\'.md5(\'${2}${3}\').\'\\\');</script>\'',
 			],
 			'mapid'	=> [
         'bbcode_tag'			=> 'mapid',
