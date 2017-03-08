@@ -3,8 +3,8 @@
     "type": "phpbb-extension",
     "description": "Adds maps to forum posts and messages. That's done via a [map] bbcode.",
     "homepage": "https://github.com/mapbbcode/mapbb-phpbb31",
-    "version": "3.1.0",
-    "time": "2016-04-17",
+    "version": "3.1.1",
+    "time": "2017-03-08",
     "keywords": [
         "phpbb",
         "extension",
