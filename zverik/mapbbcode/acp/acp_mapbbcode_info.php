@@ -14,19 +14,19 @@ namespace zverik\mapbbcode\acp;
 */
 class acp_mapbbcode_info
 {
-	function module()
-	{
-		return array(
-			'filename'	=> '\zverik\mapbbcode\acp\acp_mapbbcode_module',
-			'title'		=> 'ACP_MAPBBCODE_SETTINGS',
-			'modes'		=> array(
-        'settings'	=> array(
+  function module()
+  {
+    return array(
+      'filename' => '\zverik\mapbbcode\acp\acp_mapbbcode_module',
+      'title'    => 'ACP_MAPBBCODE_SETTINGS',
+      'modes'    => array(
+        'settings' => array(
           'title' => 'ACP_MAPBBCODE_SETTINGS',
-          'auth' => 'acl_a_bbcode',
-          'cat' => array('ACP_MESSAGES')
+          'auth'  => 'acl_a_bbcode',
+          'cat'   => array('ACP_MESSAGES')
         ),
-			),
-		);
-	}
+      ),
+    );
+  }
 }
 ?>

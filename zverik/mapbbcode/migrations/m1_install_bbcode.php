@@ -37,7 +37,7 @@ class m1_install_bbcode extends \phpbb\db\migration\migration
 
       array('module.add', array(
         'acp', 'ACP_MESSAGES', array(
-            'module_basename'	=> '\zverik\mapbbcode\acp\acp_mapbbcode_module',
+            'module_basename' => '\zverik\mapbbcode\acp\acp_mapbbcode_module',
             'modes' => array('settings'),
         ),
       )),
