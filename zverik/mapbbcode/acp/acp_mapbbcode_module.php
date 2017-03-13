@@ -18,7 +18,7 @@ class acp_mapbbcode_module
 
 	function main($id, $mode)
 	{
-		global $db, $user, $auth, $template;
+		global $db, $user, $auth, $template, $request, $phpbb_log;
 		global $config, $phpbb_root_path, $phpbb_admin_path, $phpEx;
 
 		$action	= $request->variable('action', '');
@@ -81,7 +81,7 @@ class acp_mapbbcode_module
 			$config->set('mapbb_allowed_tags', $allowed_tags);
 			$config->set('mapbb_share_server', $share_server);
 
-			$phpbb_log->add('admin', 'LOG_CONFIG_MAPBBCODE');
+			$phpbb_log->add('admin', $user->data['user_id'], $user->ip, 'LOG_CONFIG_MAPBBCODE', time(), array());
 			trigger_error($user->lang['CONFIG_UPDATED'] . adm_back_link($this->u_action));
 		}
 
